@@ -1,0 +1,543 @@
+
+.page {
+    background-color: rgb(246, 250, 252);
+    user-select: none;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-auto-rows: 16px 20fr 2fr;
+    grid-template-areas:'page progressbar page2'
+                        'page survey page2'
+                        'page survey page2';
+}
+body {
+    margin: 0;
+}
+.content {
+    min-width: 1500px;
+    /* resize: both; */
+    /* overflow: auto; */
+  }
+  /* survey */
+.theme {
+    color: gray;
+    font-size: 35px;
+    padding-top: 20px;
+}
+.questions {
+    color: darkgray;
+    font-size: 20px;
+}
+.lowScoreAnswer {
+    float: left;
+    width: 300px;
+    color: darkgray;
+    font-size: 17px;
+    position: relative;
+    left: 50px;
+    top: 45px;
+}
+.highScoreAnswer {
+    width: 300px;
+    color: darkgray;
+    font-size: 17px;
+    float: right;    
+    position: relative;
+    top: 44px;
+    right: 60px;
+}
+.progressBar {
+    background-color: rgb(246, 250, 252);
+    grid-area: progressbar;
+    box-shadow: 0 4px 8px 0 #f6fdff, 0 6px 20px 0 #eef2f3;
+    position: relative;
+}
+.letters{
+  z-index: 5;
+  position: absolute;
+}
+.progressBarInside {
+    color: gray;
+    background-color: #c9ebf2;
+    height: 100%;
+    /* text-align: end; */
+    box-shadow: 0 4px 8px 0 #f6fdff, 0 6px 20px 0 #eef2f3;
+    padding-top: 7px;
+    padding-right: 5px;
+    position: absolute; 
+    bottom: 0px; 
+    text-align: left;
+    z-index: 3;
+}
+.survey {
+    background-color: white;
+    border: solid white 5px;
+    grid-area: survey;
+    text-align: center;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 #f6fdff, 0 6px 20px 0 #eef2f3;
+}
+hr {
+    clear: both;
+    margin-top: 50px;
+    border: solid #c9ebf2 1px;
+}
+.buttonContainer {
+    color: transparent;
+    position: relative;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    /* user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; */
+    cursor: pointer;
+    border-style: solid;
+    right: 6px;
+    top: 25px;
+    margin: 3%;
+}
+/* lag button */
+.createCustomButton {
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    /* background-color: rgb(246, 250, 252); */
+    border-radius: 50%;
+    border: 2.5px;
+    border-color: #c9ebf2;
+    border-style: solid;
+    /* margin: 50px; */
+}
+/* skjul tidligere radio */
+.buttonContainer input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+  }
+  /* farge på hover på custom radio */
+.buttonContainer:hover input ~ .radio1 { 
+    background-color: rgb(241, 240, 240);
+  }
+.buttonContainer:hover input ~ .radio2 { 
+    background-color: rgb(241, 240, 240);
+  }
+.buttonContainer:hover input ~ .radio3 { 
+    background-color: rgb(241, 240, 240);
+  }
+.buttonContainer:hover input ~ .radio4 { 
+    background-color: rgb(241, 240, 240);
+  }
+.buttonContainer:hover input ~ .radio5 { 
+    background-color: rgb(241, 240, 240);
+  }
+.buttonContainer:hover input ~ .radio6 { 
+    background-color: rgb(241, 240, 240);
+  }
+.buttonContainer:hover input ~ .radio7 { 
+    background-color: rgb(241, 240, 240);
+  }
+.page2 {
+    grid-area: page2;
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    background-color: lightgray;
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #AEAEAE;
+}
+/* Both buttons */
+.bothB {
+    font-size: 50px;
+    background-color: transparent;
+    color: #00d4b1;
+    margin: 30px;
+    cursor: pointer;
+}
+/* Buttons hover cursor */
+.bothB:hover {
+  -webkit-text-fill-color: #84d1c4;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #00d4b1;
+}
+.noHover{
+  pointer-events: none;
+}
+
+/* Button right */
+.bH { 
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+/* Both left */
+.bV { 
+    position: absolute;
+    bottom: 0px;
+}
+
+.radioContainer {
+    width: 500px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+    right: 10px;
+}
+
+.label1 {
+    /* float: left; */
+    border-style: solid;
+ }
+ .label2 {
+     padding-right: 25px;
+     margin-left: 50px;
+     /* float: left; */
+ }
+ .label3 {
+     padding-right: 25px;
+     margin-left: 20px;
+     /* float: left; */
+ }
+ .label4 {
+     padding-right: 25px;
+     /* float: left; */
+     margin-right: 10px;
+ }
+ .label5 {
+     padding-right: 22px;
+     /* float: left; */
+ }
+ .label6 {
+     padding-right: 25px;
+     /* float: left; */
+ }
+ .label7 {
+     padding-right: 25px;
+     /* float: left; */
+     margin-left: 20px;
+ }
+
+ .radio1 {
+    border-color: rgb(255, 111, 108);
+    height: 54px;
+    width: 54px;
+}
+.radio2 {
+    border-color: rgb(255, 172, 171);
+    height: 47px;
+    width: 47px;
+    margin-top: 3.5px;
+
+}
+.radio3 {
+    border-color: rgb(255, 238, 80);
+    height: 40px;
+    width: 40px;
+    margin-top: 7px;
+}
+.radio4 {
+    border-color: rgb(255, 238, 80);
+    height: 35px;
+    width: 35px;
+    margin-top: 9.5px;
+}
+.radio5 {
+    border-color: rgb(255, 238, 80);
+    height: 40px;
+    width: 40px;
+    margin-top: 7px;
+}
+.radio6 {
+    border-color: rgb(170, 219, 163);
+    height: 47px;
+    width: 47px;
+    margin-top: 3.5px;
+}
+.radio7 {
+    border-color: rgb(63, 179, 47);
+    height: 54px;
+    width: 54px;
+}
+
+ /* farge på hover på custom radio */
+.buttonContainer:hover input ~ .radio1 { 
+  background-color: rgb(253, 135, 133);
+}
+.buttonContainer:hover input ~ .radio2 { 
+  background-color: rgb(255, 186, 184);
+}
+.buttonContainer:hover input ~ .radio3 { 
+  background-color: rgb(255, 243, 136);
+}
+.buttonContainer:hover input ~ .radio4 { 
+  background-color: rgb(255, 243, 136);
+}
+.buttonContainer:hover input ~ .radio5 { 
+  background-color: rgb(255, 243, 136);
+}
+.buttonContainer:hover input ~ .radio6 { 
+  background-color: rgb(194, 230, 189);
+}
+.buttonContainer:hover input ~ .radio7 { 
+  background-color: rgb(105, 199, 92);
+}
+
+.buttonContainer input:checked ~ .radio1 {
+  background-color: rgb(255, 111, 108);
+}
+.buttonContainer input:checked ~ .radio2 {
+  background-color: rgb(255, 172, 171);
+}
+.buttonContainer input:checked ~ .radio3 {
+  background-color: rgb(255, 238, 80);
+}
+.buttonContainer input:checked ~ .radio4 {
+  background-color: rgb(255, 238, 80);
+}
+.buttonContainer input:checked ~ .radio5 {
+  background-color: rgb(255, 238, 80);
+}
+.buttonContainer input:checked ~ .radio6 {
+  background-color: rgb(170, 219, 163);
+}
+.buttonContainer input:checked ~ .radio7 {
+    background-color: rgb(63, 179, 47);
+}
+.popup {
+  width: 100%;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  position:absolute;
+  width: 300px;
+  left: 70%;
+  /* top: 455px; */
+  bottom: 50px;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 #f6fdff, 0 6px 20px 0 #eef2f3;
+  border-radius: 4px;
+  border: solid lightblue 5px;
+}
+.popbutton {
+  bottom: 0;
+  position: absolute;
+  left: 1200px;
+}
+
+.notepad {
+  /* background-color: transparent; */
+  /* margin: 4px; */
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+}
+.notepad:focus {
+    outline: none;
+}
+.alternativtResultatOppsett {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 10px;
+}
+/* registration */
+.sessionPosition {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 70.5px;
+}
+.regError {
+  color:red;
+  position: absolute;
+  left: 70.5px;
+  top: 147px;
+}
+.sessionDropDown {
+  margin-left: 4px;
+}
+select {
+  border: solid  #00d4b1 1px;
+}
+.regMainDiv {
+  background-color: white;
+  border: solid white 5px;
+  border-radius: 3px;
+  height: 280px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 #e9f4f7, 0 6px 20px 0 #eef2f3;
+  user-select: none;
+}
+.regLogo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  padding: 20px
+}
+.regInputs {
+  margin: auto;
+  display: block;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: solid #00d4b1 1px;
+}
+.regNameInputPosition {
+  margin-top: 50px;
+}
+.regInputs:focus {
+  outline: none;
+}
+  .regInputs:hover {
+  background-color: #e3faf6;
+}
+.regButton {
+  display: block;
+  background-color: white;
+  /* text-align: right; */
+  float: right;
+  margin-top: 70px;
+  margin-right: 10px;
+  font-size: 30px;
+  color: #00d4b1;
+  border: solid white;
+  border-radius: 0.3px;
+  cursor: pointer;
+}
+
+.regButton:hover {
+  color: #a4ece0;
+  cursor: pointer;
+}
+.regH3 {
+  margin-left: 24px;
+}
+.numbersUnderCheckmark {
+  display: block;
+    position: absolute;
+    border: 2.5px;
+    color: white;
+    padding: 10px 0px 0px 0px;
+    font-size: 24px;
+  }
+.bar {
+  fill: rgba(255, 111, 108, 0.5);
+  transition: fill .3s ease;
+  stroke: white;
+  stroke-width: 0.010;
+  stroke-linecap: round;
+  }
+.bar1 {
+    fill: #e4f5f8b9;
+    stroke: #e4f5f8b9;
+    stroke-width: 0.02;
+}
+.scale {
+  fill: transparent;
+  stroke: rgb(243, 243, 243);
+  stroke-width: 0.02;
+}
+.bar1 text {
+fill: transparent;
+stroke: transparent;
+font-size: 3%;
+}
+.bar1:hover text {
+  fill: black;
+  font-size: 3%;
+}
+.bar text {
+fill: transparent;
+stroke: transparent;
+font-size: 3%;
+background-color: #c9ebf2;
+}
+.hovercolor:hover {
+  fill: inherit;
+  stroke: black;
+}
+.bar:hover text {
+  fill: rgb(255, 255, 255);
+  font-size: 4.5%;
+}
+.chart {
+    grid-area: chart;
+}
+.kategori {
+  font-size: 25px;
+  grid-area: kategori;
+  text-align: center;
+  align-self: flex-end;
+  color: black;
+}
+.explain {
+  padding: 10px 10px 10px 50px;
+  grid-area: explain;
+}
+.points {
+  font-size: 19px;
+  grid-area: points;
+  color: black;
+}
+.divContainer {
+  padding-left: 40px;
+  display: grid;
+  float: left;
+  width: 700px;
+  height: 600px;
+  grid-template-columns: 50px 500px;
+  grid-template-rows: 70px 15px 400px 50px;
+  grid-template-areas:'kategori kategori'
+                      'points null'
+                      'points chart'
+                      'explain explain'
+}
+.pointa {
+  height: 10px;
+  border: solid transparent 2px;
+  padding: 5px 0px 47px 23px;
+}
+@font-face {
+  font-family: Gravity-Light;
+  src:url("Gravity-Light.otf");
+}
+* {
+  font-family: Gravity-Light;
+}
+
+/* the numbersinside surveybuttons */
+.nuc1  {
+  padding-left: 21px;
+}
+.nuc2  {
+padding-left: 16px;
+}
+.nuc3  {
+padding-left: 13px;
+}
+.nuc4  {
+padding-left: 10px;
+}
+.nuc5  {
+padding-left: 13px;
+}
+.nuc6  {
+padding-left: 16px;
+}
+.nuc7  {
+padding-left: 21px;
+}
+
+

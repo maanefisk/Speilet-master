@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        rect {
+            fill: rgb(204, 190, 196);
+            stroke-width: 1;
+            stroke: white;
+        }
+
+        div.page {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1 fr 1 fr;
+            grid-auto-rows: minmax(auto, auto) ;
+            grid-template-areas:'results results'
+                                'chart chart'
+                                'bleft bright';
+        }
+        
+        div.results {
+            text-align: center;
+            font-size: 50px;
+            grid-area: results;
+        }
+        div.chart {
+            text-align: center;
+            grid-area: chart;
+        }
+        div.bleft {
+            font-size: 90px;
+            grid-area: bleft;
+        }
+        div.bright {
+            text-align: end;
+            font-size: 90px;
+            grid-area: bright;
+        }
+
+        div {
+            font-family: Helvetica;
+        }
+
+        
+    </style>
+</head>
+<body>
+<div class="page">
+<div class="results">Results</div>
+<div id="SVGcontainer" class="chart"></div>
+<div class="bleft">⇦</div><div class="bright">⇨</div>
+</div>
+
+<script>
+let SVGcontainer = document.getElementById('SVGcontainer');
+
+show();
+function show() {
+SVGcontainer.innerHTML = `
+<svg width="600" viewBox="0 0 90 70">
+  <rect width="15" height="60" x="0" y="10" />
+  <rect width="15" height="55" x="15" y="15" />
+  <rect width="15" height="50" x="30" y="20" />
+  <rect width="15" height="45" x="45" y="25" />
+  <rect width="15" height="40" x="60" y="30" />
+  <rect width="15" height="35" x="75" y="35" />
+</svg>
+`
+}
+   
+        
+</script>
+</body>
+</html>

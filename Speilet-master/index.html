@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speilet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="model.js"></script>
+    <script src="registrationView.js"></script>
+    <script src="registrationController.js"></script>
+    <script src="surveyView.js"></script>
+    <script src="surveyController.js"></script>
+    <script src="resultView1.js"></script>
+    <script src="resultController.js"></script>
+    <script src="resultView2.js"></script>
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="content" id="content"></div>
+    <script>
+        let firebaseConfig = {
+            apiKey: "AIzaSyCwsm_Lauj0Rhh7lLoBfcPTmDm-zS6yqJ0",
+            authDomain: "los-speilet.firebaseapp.com",
+            databaseURL: "https://los-speilet.firebaseio.com",
+            projectId: "los-speilet",
+            storageBucket: "los-speilet.appspot.com",
+            messagingSenderId: "822730136033",
+            appId: "1:822730136033:web:4fa6413f32785dd4e45aa0",
+            measurementId: "G-2V38QGNYTC"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        updateView();
+        function updateView() {
+            if (model.page == 'registrationView') registrationView();
+            if (model.page == 'surveyView') surveyView();
+            if (model.page == 'resultView1') resultView1();
+            if (model.page == 'resultView2') resultView2();
+        }
+    </script>
+</body>
+</html>

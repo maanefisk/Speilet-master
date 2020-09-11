@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .divMedAltI {
+        position: absolute;
+        right: 540px;
+        top: 150px;
+        display: table;
+      }
+      .clearRight {
+        clear: right;
+      }
+      .div1 {
+        border: solid 5px black;
+        width: 270px;
+        height: 270px;
+        margin: 1px;
+        float: right;
+        text-align: center;
+        line-height: 50px;
+        font-size: 35px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      h1 {
+        margin: auto;
+        width: 100px;
+        position: relative;
+        top: 30px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      .color1 {
+        background-color: rgb(0, 201, 0);
+      }
+      .color2 {
+        background-color: rgb(253, 253, 31);
+      }
+      .color3 {
+        background-color: white;
+      }
+      .color4 {
+        background-color: rgb(250, 26, 26);
+      }
+      .button1 {
+        font-size: 80px;
+        margin: 20px;
+        position: absolute;
+        bottom: 50px;
+        color: rgb(66, 109, 248);
+      }
+      .LowerRightCorner {
+        right: 460px;
+      }
+      .LowerLeftCorner {
+        left: 490px;
+      }
+      .chatButton {
+        position: absolute;
+        bottom: 24px;
+        right: 0;
+        font-size: 60px;
+        color: rgb(66, 109, 248);
+      }
+      .menuButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 50px;
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Kvadrant</h1>
+    <div class="divMedAltI">
+      <div class="div1 color1">
+        <ul>
+          <li>Aktivitet 1</li>
+          <li>Aktivitet 2</li>
+          <li>Aktivitet 3</li>
+        </ul>
+      </div>
+      <div class="div1 color2">
+        <ul>
+          <li>Aktivitet 4</li>
+          <li>Aktivitet 5</li>
+        </ul>
+      </div>
+      <div class="div1 color3 clearRight">
+        <ul>
+          <li>Aktivitet 6</li>
+          <li>Aktivitet ?</li>
+        </ul>
+      </div>
+      <div class="div1 color4">
+        <ul>
+          <li>Aktivitet 7</li>
+          <li>Aktivitet 8</li>
+        </ul>
+      </div>
+    </div>
+    <button class="menuButton"><b>Menu</b></button>
+    <button class="LowerLeftCorner button1">◀</button>
+    <button class="LowerRightCorner button1">▶</button>
+    <button class="chatButton">Chat ▶</button>
+  </body>
+</html>
